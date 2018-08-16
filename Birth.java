@@ -21,20 +21,19 @@ class Birth {
         name = scanner.next();
         
         //ask gentle
-        String gentle;
+        char gentle;
         String call = null;
         try{
             do{
                 System.out.print("Please enter your gentle[Enter m = male ... f = female]: ");
-                gentle = scanner.next();
-                if(gentle == "m")
+                gentle = scanner.next().charAt(0);
+                if(gentle == 'm')
                     call = "MR ";
-                else 
+                else if(gentle == 'f')
                     call = "MRS";
-            
-                if((gentle != "m") || (gentle != "f"))
+                else
                     System.out.println("Please see instruction");
-            }while((gentle != "m") || (gentle != "f"));
+            }while((gentle != 'm') && (gentle != 'f'));
             
         }catch(InputMismatchException e){
             System.out.println("Invalid entry");
